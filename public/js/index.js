@@ -1,6 +1,4 @@
-$(document).onload(function () {
-  $("#channels").css("display", "none");
-});
+// TABS
 
 function openCity(evt, tabName) {
   let i, tabcontent, tablinks;
@@ -18,3 +16,5 @@ function openCity(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+//SCROLL

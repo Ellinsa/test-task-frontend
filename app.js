@@ -1,5 +1,4 @@
-//jshint esversion:6
-
+//jshint esversion
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");

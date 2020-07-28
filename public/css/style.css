@@ -1,7 +1,8 @@
 /* MAIN */
 body {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  background: #ffffff; }
 
 * {
   box-sizing: border-box;
@@ -22,6 +23,9 @@ body {
   float: none;
   vertical-align: middle;
   padding: 0 0 0 12px; }
+
+.brand:hover {
+  cursor: pointer; }
 
 input.form-control {
   font-size: 16px;
@@ -262,30 +266,24 @@ footer {
   .genres .horrors {
     background: linear-gradient(136.27deg, #828282 8.44%, #333333 91.36%); }
 
-.wrapper-for-scroll {
-  height: 600px;
-  margin: 0 auto;
-  overflow-x: hidden;
-  overflow-y: scroll; }
-
 .channel {
   height: 162px;
   max-width: 1180px;
   margin-bottom: 20px;
-  margin-right: 10px;
+  margin-right: 20px;
   background: #f2f2f2;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
   border-radius: 8px; }
+  .channel:last-child {
+    margin-bottom: 0; }
   .channel:hover {
     cursor: pointer;
-    background-color: #f8e6e6; }
+    background-color: #f3e9e9; }
   .channel .channel-title {
     line-height: 24px !important; }
-  .channel:first-child {
-    margin-top: 25px; }
   .channel .channel-logo {
     width: 40%;
     float: left;

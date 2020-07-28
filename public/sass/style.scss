@@ -46,6 +46,7 @@ $horror-card-bg: linear-gradient(136.27deg, #828282 8.44%, #333333 91.36%);
 body {
   display: flex;
   flex-direction: column;
+  background: $commonWhite;
 }
 
 * {
@@ -74,6 +75,9 @@ body {
   float: none;
   vertical-align: middle;
   padding: 0 0 0 12px;
+}
+.brand:hover {
+  cursor: pointer;
 }
 
 input.form-control {
@@ -317,30 +321,24 @@ footer {
   }
 }
 
-.wrapper-for-scroll {
-  height: 600px;
-  margin: 0 auto;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
 .channel {
   height: 162px;
   max-width: 1180px;
   margin-bottom: 20px;
-  margin-right: 10px;
+  margin-right: 20px;
   background: $footerBg;
+  &:last-child {
+    margin-bottom: 0;
+  }
   &:hover {
     cursor: pointer;
-    background-color: #f8e6e6;
+    background-color: #f3e9e9;
   }
   .channel-title {
     line-height: 24px !important;
   }
   @include border-radius(8px);
-  &:first-child {
-    margin-top: 25px;
-  }
+
   .channel-logo {
     width: 40%;
     float: left;

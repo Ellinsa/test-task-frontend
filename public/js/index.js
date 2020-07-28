@@ -18,3 +18,6 @@ function openCity(evt, tabName) {
 }
 
 //SCROLL
+jQuery(document).ready(function () {
+  jQuery(".wrapper-for-scroll").scrollbar();
+});

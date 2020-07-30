@@ -34,9 +34,46 @@
             />
             <a href="#">Найти</a>
           </div>
-          <button class="button-header">Войти</button>
+          <button
+            class="button-header"
+            onclick="document.getElementById('id01').style.display='block'"
+          >
+            Войти
+          </button>
         </div>
       </nav>
     </header>
+
+    <!-- The Modal -->
+    <div id="id01" class="modal">
+      <form class="modal-content animate" action="/user_page" method="POST">
+        <div class="form-box">
+          <div class="form-box-content">
+            <h2>Вход</h2>
+            <input type="text" placeholder="Логин" name="name" required />
+
+            <input
+              type="password"
+              placeholder="Пароль"
+              name="password"
+              required
+            />
+            <div style="width: 100%;">
+              <input
+                type="checkbox"
+                checked="checked"
+                name="remember"
+                id="remember-me"
+              />
+              <label for="remember-me">
+                <span class="remember-btn-content">Запомнить</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit">Войти</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

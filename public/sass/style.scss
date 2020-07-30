@@ -7,6 +7,7 @@ $greyText: #333333;
 $footerBg: #f2f2f2;
 $footerLink: #1f4766;
 $shadow: #000000cc;
+$fadeBlack: #00000066;
 
 $comedy-card-bg: linear-gradient(136.27deg, #f2c94c 8.44%, #f29a4a 91.36%);
 $drama-card-bg: linear-gradient(136.27deg, #f2994a 8.44%, #eb5757 91.36%);
@@ -51,7 +52,9 @@ body {
 
 * {
   box-sizing: border-box;
-
+  &:focus {
+    outline: none;
+  }
   &:after,
   &:before {
     box-sizing: border-box;
@@ -85,7 +88,7 @@ input.form-control {
   background-color: transparent;
   box-shadow: transparent;
   line-height: 19px;
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid $greyText;
   @include border-radius(0px);
   box-shadow: none;
 }
@@ -128,102 +131,212 @@ input.form-control {
   }
 }
 
-// auth -form
+// AUTH FORM
+
+form {
+  border: 3px solid $footerBg;
+
+  .form-box {
+    height: 100%;
+    @include flex-column();
+    justify-content: space-between;
+
+    input {
+      &[type="checkbox"] {
+        display: none;
+      }
+
+      &[type="text"],
+      &[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: none;
+        border-bottom: 1px solid $greyText;
+        background-color: transparent;
+      }
+    }
+
+    button {
+      background: $mainRed;
+      border-radius: 4px;
+      color: $commonWhite;
+      padding: 14px 20px;
+      margin: 0 auto;
+      border: none;
+      cursor: pointer;
+      width: 40%;
+      margin-bottom: 30px;
+    }
+  }
+
+  .form-box-content {
+    @include flex-column();
+    justify-content: space-between;
+  }
+}
+
+/* Full-width input fields */
+
+/* Set a style for all buttons */
+
+.form-box-content label {
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 3px;
+}
+
+form {
+  .form-box-content {
+    label::before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $greyText;
+      box-sizing: border-box;
+      @include border-radius(4px);
+      vertical-align: middle;
+      margin-right: -35px;
+    }
+
+    input[type="checkbox"]:checked + label::before {
+      content: "";
+      text-align: center;
+      background-image: url("../img/galka.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  .remember-btn-content {
+    vertical-align: text-top;
+    padding-left: 40px;
+    font-weight: 500;
+  }
+
+  .form-box {
+    button:hover {
+      opacity: 0.8;
+    }
+
+    padding: 16px;
+  }
+
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+}
+
+/* Center the image and position the close button */
 
 /* The Modal (background) */
 
-// .modal {
-//   display: none;
+.modal {
+  display: none;
 
-//   /* Hidden by default */
-//   position: fixed;
+  /* Hidden by default */
+  position: fixed;
 
-//   /* Stay in place */
-//   z-index: 1;
+  /* Stay in place */
+  z-index: 5;
 
-//   /* Sit on top */
-//   left: 0;
-//   top: 0;
-//   width: 100%;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
 
-//   /* Full width */
-//   height: 100%;
+  /* Full width */
+  height: 100%;
 
-//   /* Full height */
-//   overflow: auto;
+  /* Full height */
+  overflow: auto;
 
-//   /* Enable scroll if needed */
-//   background-color: rgb(0, 0, 0);
+  /* Enable scroll if needed */
+  overflow-y: hidden;
+  background-color: $fadeBlack;
 
-//   /* Fallback color */
-//   background-color: rgba(0, 0, 0, 0.4);
+  /* Fallback color */
+  background-color: $fadeBlack;
 
-//   /* Black w/ opacity */
-//   padding-top: 60px;
-// }
+  /* Black w/ opacity */
+  padding-top: 60px;
+}
 
-// /* Modal Content/Box */
+/* Modal Content/Box */
 
-// .modal-content {
-//   background-color: #fefefe;
-//   margin: 5px auto;
+.modal-content {
+  background-color: $footerBg;
+  margin: 5% auto 15% auto;
 
-//   /* 15% from the top and centered */
-//   border: 1px solid #888;
-//   width: 80%;
+  /* 5% from the top, 15% from the bottom and centered */
 
-//   /* Could be more or less, depending on screen size */
-// }
+  border: 1px solid #888;
+  width: 304px;
 
-// .form-box {
-//   padding: 20px;
-// }
-// /* The Close Button */
+  /* Could be more or less, depending on screen size */
 
-// .close {
-//   /* Position it in the top right corner outside of the modal */
-//   position: absolute;
-//   right: 25px;
-//   top: 0;
-//   color: #000;
-//   font-size: 35px;
-//   font-weight: bold;
+  height: 394px;
+}
 
-//   &:hover,
-//   &:focus {
-//     color: red;
-//     cursor: pointer;
-//   }
-// }
+/* The Close Button (x) */
 
-// /* Close button on hover */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
 
-// /* Add Zoom Animation */
+  &:hover,
+  &:focus {
+    color: $mainRed;
+    cursor: pointer;
+  }
+}
 
-// .animate {
-//   -webkit-animation: animatezoom 0.6s;
-//   animation: animatezoom 0.6s;
-// }
+/* Add Zoom Animation */
 
-// @-webkit-keyframes animatezoom {
-//   from {
-//     -webkit-transform: scale(0);
-//   }
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
 
-//   to {
-//     -webkit-transform: scale(1);
-//   }
-// }
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
 
-// @keyframes animatezoom {
-//   from {
-//     transform: scale(0);
-//   }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
 
-//   to {
-//     transform: scale(1);
-//   }
-// }
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+
+  .cancelbtn {
+    width: 100%;
+  }
+}
 
 /* FOOTER */
 
@@ -232,7 +345,7 @@ footer {
   bottom: 0;
   width: 100%;
   height: 130px;
-  background: #f2f2f2;
+  background: $footerBg;
   font-size: 16px;
   line-height: 19px;
 }
@@ -250,9 +363,9 @@ footer {
 .footer {
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 .footer-padding {

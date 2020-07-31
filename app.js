@@ -2,11 +2,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-
+const PORT = process.env.PORT;
 const app = express();
 
 app.set("view engine", "ejs");
-
+app.set("port", PORT);
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,6 +20,6 @@ app.get("/:id", function (req, res) {
   res.render("home", { username: id });
 });
 
-app.listen(3000, function () {
-  console.log("Server started on port 3000");
-});
+// app.listen(3000, function () {
+//   console.log("Server started on port 3000");
+// });

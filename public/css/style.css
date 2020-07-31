@@ -61,6 +61,22 @@ input.form-control {
   font-size: 16px;
   line-height: 19px; }
 
+#authorized {
+  font-weight: 500;
+  font-size: 16px; }
+  #authorized #text-username {
+    display: inline-block;
+    color: #333333;
+    margin: 0; }
+  #authorized a {
+    text-decoration: none;
+    color: #e5261e;
+    margin-left: 15px; }
+  #authorized input {
+    border: none;
+    background-color: inherit;
+    width: 80px; }
+
 .button-header {
   background: #e5261e;
   -webkit-border-radius: 5px;
@@ -152,7 +168,7 @@ form .remember-btn-content {
 form .form-box {
   padding: 16px; }
   form .form-box button:hover {
-    opacity: 0.8; }
+    background-color: #cc221b; }
 
 form span.psw {
   float: right;
@@ -321,7 +337,7 @@ footer {
       .wrapper .content-card .card:hover {
         cursor: pointer; }
         .wrapper .content-card .card:hover:before {
-          opacity: 1; }
+          opacity: 0.8; }
         .wrapper .content-card .card:hover .info {
           opacity: 1;
           height: 100%; }
@@ -338,7 +354,7 @@ footer {
         -ms-border-radius: 15px;
         -o-border-radius: 15px;
         border-radius: 15px;
-        background: #000000cc;
+        background: #333333cc;
         z-index: 2;
         -webkit-transition: 0.5s;
         -moz-transition: 0.5s;

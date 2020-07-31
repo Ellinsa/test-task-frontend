@@ -34,30 +34,42 @@
             />
             <a href="#">Найти</a>
           </div>
+
           <button
+            id="button-login"
             class="button-header"
             onclick="document.getElementById('id01').style.display='block'"
           >
             Войти
           </button>
+          <div id="authorized">
+            <input
+              type="text"
+              id="new-username"
+              value=" "
+              size="10"
+              style="display: none;"
+              onfocusout="saveNewName()"
+            />
+
+            <p id="text-username" onclick="makeUnicornsFly()">
+              <%= username ? username : '' %>
+            </p>
+            <a href="" id="back" onclick="backHome()">Выйти</a>
+          </div>
         </div>
       </nav>
     </header>
 
     <!-- The Modal -->
     <div id="id01" class="modal">
-      <form class="modal-content animate" action="/user_page" method="POST">
+      <form class="modal-content animate">
         <div class="form-box">
           <div class="form-box-content">
             <h2>Вход</h2>
             <input type="text" placeholder="Логин" name="name" required />
 
-            <input
-              type="password"
-              placeholder="Пароль"
-              name="password"
-              required
-            />
+            <input type="password" placeholder="Пароль" name="password" />
             <div style="width: 100%;">
               <input
                 type="checkbox"
@@ -71,7 +83,7 @@
             </div>
           </div>
 
-          <button type="submit">Войти</button>
+          <button onclick="login()">Войти</button>
         </div>
       </form>
     </div>

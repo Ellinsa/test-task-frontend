@@ -11,7 +11,12 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
-  res.render("home");
+  res.render("home", { username: "" });
+});
+
+app.get("/:id", function (req, res) {
+  var id = req.params.id;
+  res.render("home", { username: id });
 });
 
 app.listen(3000, function () {

@@ -113,6 +113,25 @@ input.form-control {
   font-size: 16px;
   line-height: 19px;
 }
+#authorized {
+  font-weight: 500;
+  font-size: 16px;
+  #text-username {
+    display: inline-block;
+    color: $greyText;
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    color: #e5261e;
+    margin-left: 15px;
+  }
+  input {
+    border: none;
+    background-color: inherit;
+    width: 80px;
+  }
+}
 
 .button-header {
   background: $mainRed;
@@ -218,7 +237,7 @@ form {
 
   .form-box {
     button:hover {
-      opacity: 0.8;
+      background-color: $hoverRed;
     }
 
     padding: 16px;
@@ -437,7 +456,7 @@ footer {
         cursor: pointer;
 
         &:before {
-          opacity: 1;
+          opacity: 0.8;
         }
 
         .info {
@@ -455,7 +474,7 @@ footer {
         width: 100%;
         height: 100%;
         @include border-radius(15px);
-        background: $shadow;
+        background: #333333cc;
         z-index: 2;
         @include transition(0.5s);
         opacity: 0;

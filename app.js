@@ -19,6 +19,6 @@ app.get("/:id", function (req, res) {
   res.render("home", { username: id });
 });
 
-app.listen(5000, function () {
+app.listen(3000, function () {
   console.log("Server started on port 3000");
 });
